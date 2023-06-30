@@ -1,6 +1,6 @@
 package com.app.momment.highlight;
 
-import com.app.momment.child.Child;
+import com.app.momment.children.Child;
 import jakarta.persistence.*;
 
 import java.util.Date;
