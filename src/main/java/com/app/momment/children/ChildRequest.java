@@ -1,4 +1,4 @@
-package com.app.momment.child;
+package com.app.momment.children;
 
 import java.util.Date;
 

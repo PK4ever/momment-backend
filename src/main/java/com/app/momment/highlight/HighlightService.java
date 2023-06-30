@@ -1,7 +1,7 @@
 package com.app.momment.highlight;
 
-import com.app.momment.child.Child;
-import com.app.momment.child.ChildRepository;
+import com.app.momment.children.Child;
+import com.app.momment.children.ChildrenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ public class HighlightService {
     HighlightRepository highlightRepository;
 
     @Autowired
-    ChildRepository childRepository;
+    ChildrenRepository childrenRepository;
 
     public ResponseEntity<String> saveHighlight(HighlightRequest highlightRequest) {
 
@@ -26,7 +26,7 @@ public class HighlightService {
             highlight.setDate(highlightRequest.getDate());
             highlight.setDescription(highlightRequest.getDescription());
 
-            Child child = this.childRepository.findById(highlightRequest.getChild_id()).get();
+            Child child = this.childrenRepository.findById(highlightRequest.getChild_id()).get();
             highlight.setChild(child);
             if (this.highlightRepository.save(highlight) != null) {
                 return new ResponseEntity<>("Highlight save success!", HttpStatus.OK);

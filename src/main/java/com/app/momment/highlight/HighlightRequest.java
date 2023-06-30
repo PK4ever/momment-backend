@@ -1,7 +1,5 @@
 package com.app.momment.highlight;
 
-import com.app.momment.child.Child;
-
 import java.util.Date;
 
 public class HighlightRequest {
