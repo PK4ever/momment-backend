@@ -1,5 +1,6 @@
 package com.app.momment.children;
 
+import com.app.momment.users.User;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -13,8 +14,20 @@ public class Child {
     @Column(nullable = false)
     private String name;
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Column
     private Date dob;
+
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable=false, referencedColumnName = "id")
+    private User user;
     public void setName(String name) {
         this.name = name;
     }
