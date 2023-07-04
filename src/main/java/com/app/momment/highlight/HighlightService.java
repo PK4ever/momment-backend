@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HighlightService {
 
@@ -33,6 +35,10 @@ public class HighlightService {
             }
         }
         return new ResponseEntity<>("Bad Highlight Request", HttpStatus.BAD_REQUEST);
+    }
+
+    public List<Highlight> fetchAll(long childId) {
+        return highlightRepository.findAllByChildId(childId);
     }
     public ResponseEntity deleteHighlight(long id) {
         if (id != 0) {

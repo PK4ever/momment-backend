@@ -18,8 +18,8 @@ public class ChildrenController {
         return this.childService.saveChild(childRequest);
     }
 
-    @GetMapping ("fetch")
-    public List<Child> fetchAll() {
-        return this.childService.fetchAll();
+    @GetMapping ("fetchAll")
+    public List<Child> fetchAll(@RequestBody long userId) {
+        return this.childService.fetchAll(userId);
     }
 }
