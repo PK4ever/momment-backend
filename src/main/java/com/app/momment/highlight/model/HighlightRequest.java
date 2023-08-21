@@ -1,4 +1,4 @@
-package com.app.momment.highlight;
+package com.app.momment.highlight.model;
 
 import java.util.Date;
 

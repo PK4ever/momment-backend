@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.ResourceBundleMessageSource;
 
 import java.util.Arrays;
 
@@ -28,6 +29,15 @@ public class MommentApplication {
 			}
 
 		};
+	}
+
+	@Bean(name="messageSource")//wont work without the bean name
+	public ResourceBundleMessageSource bundleMessageSource() {
+		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+		messageSource.setUseCodeAsDefaultMessage(true);
+		messageSource.setBasename("messageSource");
+//		messageSource.setBasename("messages");
+		return messageSource;
 	}
 
 }

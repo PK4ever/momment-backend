@@ -1,9 +1,13 @@
-package com.app.momment.children;
+package com.app.momment.children.model;
 
-import com.app.momment.users.User;
+import com.app.momment.highlight.model.Highlight;
+import com.app.momment.users.model.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Child {
@@ -25,9 +29,18 @@ public class Child {
     @Column
     private Date dob;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false, referencedColumnName = "id")
     private User user;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "child", cascade = CascadeType.ALL)
+    private List<Highlight> highlightList;
+    public long getId() {
+        return id;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

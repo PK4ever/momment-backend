@@ -1,7 +1,7 @@
-package com.app.momment.users;
+package com.app.momment.users.repository;
 
+import com.app.momment.users.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
