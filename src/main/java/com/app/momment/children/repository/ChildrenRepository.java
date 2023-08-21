@@ -1,5 +1,6 @@
-package com.app.momment.children;
+package com.app.momment.children.repository;
 
+import com.app.momment.children.model.Child;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

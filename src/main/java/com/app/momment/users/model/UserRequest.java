@@ -1,4 +1,4 @@
-package com.app.momment.users;
+package com.app.momment.users.model;
 
 public class UserRequest {
 

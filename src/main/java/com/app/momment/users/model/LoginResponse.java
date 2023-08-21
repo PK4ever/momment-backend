@@ -1,15 +1,23 @@
-package com.app.momment.users;
+package com.app.momment.users.model;
 
 public class LoginResponse {
+
+    private UserResponse user;
     public String message;
     public boolean status;
 
-    public LoginResponse() {
-    }
-
-    public LoginResponse(String message, boolean status) {
+    public LoginResponse(String message, boolean status, UserResponse user) {
         this.message = message;
         this.status = status;
+        this.user = user;
+    }
+
+    public UserResponse getUser() {
+        return user;
+    }
+
+    public void setUser(UserResponse user) {
+        this.user = user;
     }
 
     public String getMessage() {

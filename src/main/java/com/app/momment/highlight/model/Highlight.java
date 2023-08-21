@@ -1,7 +1,10 @@
-package com.app.momment.highlight;
+package com.app.momment.highlight.model;
 
-import com.app.momment.children.Child;
+import com.app.momment.children.model.Child;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Date;
 
@@ -24,6 +27,14 @@ public class Highlight {
 
     @Column(nullable = false)
     private String description;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public void setDate(Date date) {
         this.date = date;

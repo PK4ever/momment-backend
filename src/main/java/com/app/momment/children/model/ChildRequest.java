@@ -1,7 +1,4 @@
-package com.app.momment.children;
-
-import com.app.momment.users.LoginRequest;
-import com.app.momment.users.User;
+package com.app.momment.children.model;
 
 import java.util.Date;
 
